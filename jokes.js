@@ -1,0 +1,9 @@
+module.exports = {
+    getOne: function () {
+        fetch('http://api.icndb.com/jokes/random')
+            .then(res => res.json())
+            .then(data => {
+                return data;
+            })
+    }
+}
