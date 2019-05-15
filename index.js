@@ -1,3 +1,11 @@
-const jokes = require('./jokes');
+import { jokes } from './jokes';
+import fs from 'fs';
 
-console.log(jokes.getOne());
+jokes.getOne()
+    .then(joke => {
+        document.getElementById('joke').innerHTML = joke;
+    })
+
+const copy = fs.readFileSync(__dirname + '/copyright.txt', 'utf-8');
+
+document.getElementById('copy').innerHTML = copy;
